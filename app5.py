@@ -3,8 +3,8 @@ from Adafruit_IO import Client
 import os
 aio = Client('Mukesh_k',os.getenv('Mukesh'))
 def turn_on_light(bot,update):
-    aio.send('bed room light',1)
-    data = aio.receive('bed room light')
+    aio.send('bed-room-light',1)
+    data = aio.receive('bed-room-light')
     print(f'Received value:{data.value}')
     chat_id=bot.message.chat_id
     path='https://i.pinimg.com/originals/bb/d8/86/bbd886fdc6abd7d6d51160687047aee8.jpg'
@@ -12,23 +12,23 @@ def turn_on_light(bot,update):
     update.bot.sendPhoto(chat_id=chat_id,photo=path)
 def turn_off_light(bot,update):
     aio.send('bed room light',0)
-    data = aio.receive('bed room light')
+    data = aio.receive('bed-room-light')
     print(f'Received value:{data.value}')
     chat_id=bot.message.chat_id
     path='https://i.pinimg.com/474x/77/6a/30/776a3077389d21a1669a02a15acaa777.jpg'
     bot.message.reply_text('light is turned off')
     update.bot.sendPhoto(chat_id=chat_id,photo=path)
 def turn_on_fan(bot,update):
-    aio.send('bed room fan',1)
-    data = aio.receive('bed room fan')
+    aio.send('bed-room-fan',1)
+    data = aio.receive('bed-room-fan')
     print(f'Received value:{data.value}')
     chat_id=bot.message.chat_id
     path='https://pursolaraz.com/wp-content/uploads/2019/04/Depositphotos_1175497_l-2015-1080.jpg'
     bot.message.reply_text('fan is turned on')
     update.bot.sendPhoto(chat_id=chat_id,photo=path)
 def turn_off_fan(bot,update):
-    aio.send('bed room fan',0)
-    data = aio.receive('bed room fan')
+    aio.send('bed-room-fan',0)
+    data = aio.receive('bed-room-fan')
     print(f'Received value:{data.value}')
     chat_id=bot.message.chat_id
     path='https://images-na.ssl-images-amazon.com/images/I/51YbI23n0NL._SX679_.jpg'
